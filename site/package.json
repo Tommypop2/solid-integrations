@@ -1,0 +1,59 @@
+{
+  "name": "site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "jiti ./scripts/generate.ts",
+    "dev": "solid-start dev --host",
+    "build": "solid-start build",
+    "deploy": "pnpm generate && pnpm build",
+    "preview": "vite preview --outDir dist/public"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/mark.js": "^8.11.8",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "solid-start-static": "^0.2.26",
+    "tailwindcss": "^3.3.1",
+    "tailwindcss-dir": "^4.0.0"
+  },
+  "dependencies": {
+    "@solid-primitives/clipboard": "workspace:^",
+    "@solid-primitives/event-bus": "workspace:^",
+    "@solid-primitives/event-listener": "workspace:^",
+    "@solid-primitives/intersection-observer": "workspace:^",
+    "@solid-primitives/keyboard": "workspace:^",
+    "@solid-primitives/marker": "workspace:^",
+    "@solid-primitives/media": "workspace:^",
+    "@solid-primitives/mutation-observer": "workspace:^",
+    "@solid-primitives/platform": "workspace:^",
+    "@solid-primitives/refs": "workspace:^",
+    "@solid-primitives/resize-observer": "workspace:^",
+    "@solid-primitives/rootless": "workspace:^",
+    "@solid-primitives/scheduled": "workspace:^",
+    "@solid-primitives/scroll": "workspace:^",
+    "@solid-primitives/tween": "workspace:^",
+    "@solid-primitives/utils": "workspace:^",
+    "@solidjs/meta": "^0.28.4",
+    "@solidjs/router": "^0.8.2",
+    "clsx": "^1.2.1",
+    "fuse.js": "^6.6.2",
+    "rehype-sanitize": "^5.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-emoji": "^3.1.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "sass": "^1.62.0",
+    "solid-dismiss": "^1.7.121",
+    "solid-icons": "^1.0.4",
+    "solid-tippy": "^0.2.1",
+    "tippy.js": "^6.3.7",
+    "undici": "^5.21.2",
+    "unified": "^10.1.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
