@@ -18,7 +18,7 @@ const Header: Component = () => {
     <div class="mx-auto min-h-[35vh] max-w-[720px] overflow-clip p-4 leading-7 sm:min-h-[50vh] sm:pt-[5vh] md:pt-[10vh]">
       <p class="py-3 sm:text-lg md:text-2xl">
         A project that strives to develop high-quality, community contributed Solid{" "}
-        <strong>Primitives</strong>.
+        <strong>Integrations</strong>.
         {/* All utilities are well tested and continuously maintained. */}
       </p>
       <div class="relative mb-10 mt-4 text-[14px] sm:text-base md:text-lg">
@@ -88,7 +88,7 @@ const PrimitivesTable: Component<{ packages: PackageListItem[] | undefined }> = 
             <Table.THead>
               <Table.TH>Name</Table.TH>
               <Table.TH>Stage</Table.TH>
-              <Table.TH>Primitives</Table.TH>
+              <Table.TH>Integrations</Table.TH>
               <Table.TH>Size</Table.TH>
               <Table.TH>NPM</Table.TH>
             </Table.THead>
@@ -160,12 +160,12 @@ export default function Home() {
 
   return (
     <main style={{ "padding-top": `${HEADER_HEIGHT}px` }}>
-      <Title>Solid Primitives</Title>
+      <Title>Solid Integrations</Title>
       <Header />
 
       <div class="relative top-[-100px]">
         <h2 id="primitives" class="sr-only">
-          Primitives
+          Integrations
         </h2>
       </div>
       <PrimitivesTable packages={packages()} />
