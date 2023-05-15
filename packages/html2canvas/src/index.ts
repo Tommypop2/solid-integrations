@@ -14,7 +14,13 @@ export const makeScreenshotURL = async (ref: HTMLElement) => {
   return objURL;
 };
 
-export const createScreenshotURL = (ref: () => HTMLElement | undefined) => {
+export const createScreenshotURL = (inputRef: (() => HTMLElement | undefined) | HTMLElement) => {
+  let ref: () => HTMLElement | undefined;
+  if (typeof inputRef !== "function") {
+    ref = () => inputRef;
+  } else {
+    ref = inputRef;
+  }
   const [imgUrl, { refetch, mutate }] = createResource(ref, async ref => {
     if (isServer) return null;
     const screenshotURL = await makeScreenshotURL(ref);
@@ -23,12 +29,14 @@ export const createScreenshotURL = (ref: () => HTMLElement | undefined) => {
     });
     return screenshotURL;
   });
-  createEffect(() => {
-    if (!ref()) return;
+  if (!isServer) {
     const observer = new MutationObserver(refetch);
-    observer.observe(ref()!, { childList: true, subtree: true, characterData: true });
-    onCleanup(() => observer.disconnect());
-  });
+    createEffect(() => {
+      if (!ref()) return;
+      observer.observe(ref()!, { childList: true, subtree: true, characterData: true });
+      onCleanup(() => observer.disconnect());
+    });
+  }
 
   return imgUrl;
 };
