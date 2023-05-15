@@ -4,13 +4,9 @@ const App: Component = () => {
   const [count, setCount] = createSignal(0);
   const increment = () => setCount(count() + 1);
   const [component, setComponent] = createSignal<HTMLElement>();
-  onMount(async () => {
-    createRoot(() => {
-      const screenshotURL = createScreenshotURL(component()!);
-      createEffect(() => {
-        console.log(screenshotURL());
-      });
-    });
+  const screenshotURL = createScreenshotURL(component);
+  createEffect(() => {
+    console.log(screenshotURL());
   });
   return (
     <div

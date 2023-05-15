@@ -1,5 +1,5 @@
 import html2canvas from "html2canvas";
-import { createResource, createSignal, onCleanup } from "solid-js";
+import { createEffect, createResource, createSignal, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 /**
  * A template example of how to create a new primitive.
@@ -14,8 +14,8 @@ export const makeScreenshotURL = async (ref: HTMLElement) => {
   return objURL;
 };
 
-export const createScreenshotURL = (ref: HTMLElement) => {
-  const [imgUrl, { refetch, mutate }] = createResource(async () => {
+export const createScreenshotURL = (ref: () => HTMLElement | undefined) => {
+  const [imgUrl, { refetch, mutate }] = createResource(ref, async ref => {
     if (isServer) return null;
     const screenshotURL = await makeScreenshotURL(ref);
     onCleanup(() => {
@@ -23,10 +23,12 @@ export const createScreenshotURL = (ref: HTMLElement) => {
     });
     return screenshotURL;
   });
-  if (!isServer) {
+  createEffect(() => {
+    if (!ref()) return;
     const observer = new MutationObserver(refetch);
-    observer.observe(ref, { childList: true, subtree: true, characterData: true });
+    observer.observe(ref()!, { childList: true, subtree: true, characterData: true });
     onCleanup(() => observer.disconnect());
-  }
+  });
+
   return imgUrl;
 };
