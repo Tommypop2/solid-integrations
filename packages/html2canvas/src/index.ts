@@ -17,7 +17,6 @@ export const makeScreenshotURL = async (ref: HTMLElement) => {
 
 export const createScreenshotURL = (inputRef: (() => HTMLElement | undefined) | HTMLElement) => {
   const [imgUrl, { refetch, mutate }] = createResource(inputRef, async ref => {
-    if (isServer) return null;
     const screenshotURL = await makeScreenshotURL(ref);
     onCleanup(() => {
       URL.revokeObjectURL(screenshotURL);
