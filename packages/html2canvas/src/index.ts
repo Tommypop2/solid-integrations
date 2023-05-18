@@ -19,10 +19,10 @@ export const createScreenshotURL = (inputRef: (() => HTMLElement | undefined) | 
   const [imgUrl, { refetch }] = createResource(inputRef, async (ref, last) => {
     URL.revokeObjectURL(last.value as string);
     const screenshotURL = await makeScreenshotURL(ref);
-    onCleanup(() => {
-      URL.revokeObjectURL(screenshotURL);
-    });
     return screenshotURL;
+  });
+  onCleanup(() => {
+    URL.revokeObjectURL(imgUrl.latest as string);
   });
   if (!isServer) {
     const observer = new MutationObserver(refetch);
