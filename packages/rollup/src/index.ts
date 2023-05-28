@@ -4,7 +4,9 @@ type Modules = Record<string, string>;
 /**
  * An integration that, given a signal containing source code, returns a resource containing the rollup bundle version of that source
  *
- * @param modules A signal accessor containing a record containing the files as the key, and their source as the value
+ * @param modules A signal accessor that contains a record of filenames, to their values
+ * @param inputFile The file that will be treated as the entrypoint
+ * @param outputOptions Options to be passed to rollup's generate function
  * @return Returns a resource containing the rollup output
  */
 export const createCompiled = (

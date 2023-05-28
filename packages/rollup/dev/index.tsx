@@ -4,8 +4,8 @@ const App: Component = () => {
   const [count, setCount] = createSignal(0);
   const increment = () => setCount(count() + 1);
   const [files, setFiles] = createSignal({
-    "main.js": "import {coolFun} from './fax.js'; coolFun()",
-    "fax.js": "export function coolFun(){console.log('FaxNoCap')}",
+    "main.js": "import {coolFun} from './coolFile.js'; coolFun()",
+    "coolFile.js": "export function coolFun(){console.log('this_is_cool')}",
   });
   // const [compiled, { mutate, refetch }] = createCompiled(files);
   const compiled = createCompiledCode(files);

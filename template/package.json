@@ -1,17 +1,17 @@
 {
-  "name": "@solid-primitives/template-primitive",
+  "name": "@solid-integrations/template-primitive",
   "version": "0.0.100",
   "description": "A template primitive example.",
   "author": "Your Name <you@youremail.com>",
   "contributors": [],
   "license": "MIT",
-  "homepage": "https://github.com/solidjs-community/solid-primitives/tree/main/packages/template-primitive#readme",
+  "homepage": "https://github.com/tommypop2/solid-integrations/tree/main/packages/template-primitive#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/solidjs-community/solid-primitives.git"
+    "url": "git+https://github.com/tommypop2/solid-integrations.git"
   },
   "bugs": {
-    "url": "https://github.com/solidjs-community/solid-primitives/issues"
+    "url": "https://github.com/tommypop2/solid-integrations/issues"
   },
   "primitive": {
     "name": "template-primitive",

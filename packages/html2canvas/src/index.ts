@@ -1,12 +1,12 @@
 import html2canvas from "html2canvas";
-import { createEffect, createResource, onCleanup } from "solid-js";
+import { Resource, createEffect, createResource, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 import { access } from "@solid-primitives/utils";
 /**
- * A template example of how to create a new primitive.
+ * A function to make an object URL for an image of the given element
  *
- * @param param An example of an introductory parameter
- * @return Returns the same parameter as an accessor
+ * @param ref The input DOM element to be "screenshotted"
+ * @return Returns an object URL to an image
  */
 export const makeScreenshotURL = async (ref: HTMLElement) => {
   const canvas = await html2canvas(ref, { logging: false });
@@ -34,5 +34,5 @@ export const createScreenshotURL = (inputRef: (() => HTMLElement | undefined) | 
     });
   }
 
-  return imgUrl;
+  return imgUrl as Resource<string>;
 };
