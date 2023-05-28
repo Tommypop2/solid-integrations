@@ -1,0 +1,58 @@
+{
+  "name": "@solid-integrations/qrcode-generator",
+  "version": "0.0.100",
+  "description": "A template primitive example.",
+  "author": "Your Name <you@youremail.com>",
+  "contributors": [],
+  "license": "MIT",
+  "homepage": "https://github.com/tommypop2/solid-integrations/tree/main/packages/qrcode-generator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommypop2/solid-integrations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tommypop2/solid-integrations/issues"
+  },
+  "primitive": {
+    "name": "qrcode-generator",
+    "stage": 0,
+    "list": [
+      "createPrimitiveTemplate"
+    ],
+    "category": "Display & Media"
+  },
+  "keywords": [
+    "solid",
+    "primitives"
+  ],
+  "private": false,
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": {},
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "require": "./dist/index.cjs"
+  },
+  "typesVersions": {},
+  "scripts": {
+    "dev": "jiti ../../scripts/dev.ts",
+    "build": "jiti ../../scripts/build.ts",
+    "test": "vitest -c ../../configs/vitest.config.ts",
+    "test:ssr": "pnpm run test --mode ssr"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.6.12"
+  },
+  "dependencies": {
+    "qrcode-generator": "^1.4.4"
+  }
+}
