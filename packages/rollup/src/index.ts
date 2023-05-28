@@ -39,3 +39,18 @@ export const createCompiled = (
   });
   return compiled;
 };
+/**
+ *
+ * @param modules A signal accessor that contains a record of filenames, to their values
+ * @param inputFile The file that will be treated as the entrypoint
+ * @param outputOptions Options to be passed to rollup's generate function
+ * @returns An accessor containing the compiled code, or undefined
+ */
+export const createCompiledCode = (
+  modules: Accessor<Modules>,
+  inputFile: string = "main.js",
+  outputOptions: OutputOptions = { format: "es", inlineDynamicImports: true },
+): Accessor<String | undefined> => {
+  const [compiled] = createCompiled(modules, inputFile, outputOptions);
+  return () => compiled()?.[0].code;
+};
