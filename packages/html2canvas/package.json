@@ -17,7 +17,8 @@
     "name": "html2canvas",
     "stage": 0,
     "list": [
-      "createPrimitiveTemplate"
+      "makeScreenshotURL",
+      "createScreenshotURL"
     ],
     "category": "Display & Media"
   },
