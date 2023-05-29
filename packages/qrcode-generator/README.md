@@ -9,9 +9,10 @@
 [![version](https://img.shields.io/npm/v/@solid-integrations/qrcode-generator?style=for-the-badge)](https://www.npmjs.com/package/@solid-integrations/qrcode-generator)
 [![stage](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fsolidjs-community%2Fsolid-primitives%2Fmain%2Fassets%2Fbadges%2Fstage-0.json)](https://github.com/solidjs-community/solid-primitives#contribution-process)
 
-A sample primitive that is made up for templating with the following options:
+An integration with [`qrcode-generator`](https://www.npmjs.com/package/qrcode-generator) for generating qr code data URLs:
 
-`createPrimitiveTemplate` - Provides a getter and setter for the primitive.
+- [`makeQRCode`](#makeqrcode) - Generates a QR Code Data URL.
+- [`createQRCode`](#createqrcode) - Generates a memo containing the Data URL.
 
 ## Installation
 
@@ -25,13 +26,22 @@ pnpm add @solid-integrations/qrcode-generator
 
 ## How to use it
 
+## `makeQRCode`
+
+Synchronously generates a data URL for a QR Code containing the given string
+
 ```ts
-const [value, setValue] = createPrimitiveTemplate(false);
+const qrCode = makeQRCode("Hello World");
 ```
 
-## Demo
+## `createQRCode`
 
-You can use this template for publishing your demo on CodeSandbox: https://codesandbox.io/s/solid-primitives-demo-template-sz95h
+Returns a memo with the data URL for a QR Code
+
+```ts
+const [str, setStr] = createSignal("");
+const qrCode = createQRCode(str); //The value of qrCode will reactively update when `str` changes.
+```
 
 ## Changelog
 

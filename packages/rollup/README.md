@@ -11,8 +11,8 @@
 
 A sample primitive that is made up for templating with the following options:
 
-`createCompiled` - Returns a resource containing the rollup output after bundling the given code.
-`createCompiledCode` - Composes createCompiled - instead returning an accessor containing the bundled code.
+- [`createCompiled`](#createcompiled) - Returns a resource containing the rollup output after bundling the given code.
+- [`createCompiledCode`](#createcompiledcode) - Composes createCompiled - instead returning an accessor containing the bundled code.
 
 ## Installation
 

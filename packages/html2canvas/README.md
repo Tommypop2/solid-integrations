@@ -11,7 +11,8 @@
 
 An integration for html2canvas, which contains the following functions:
 
-`makeScreenshotURL` - Makes an object URL to an image of the given html element.
+- [`makeScreenshotURL`](#makescreenshoturl) - Makes an object URL to an image of the given html element.
+- [`createScreenshotURL`](#createscreenshoturl) - Creates a resource
 
 ## Installation
 
