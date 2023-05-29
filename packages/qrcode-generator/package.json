@@ -17,7 +17,8 @@
     "name": "qrcode-generator",
     "stage": 0,
     "list": [
-      "createPrimitiveTemplate"
+      "makeQRCode",
+      "createQRCode"
     ],
     "category": "Display & Media"
   },
