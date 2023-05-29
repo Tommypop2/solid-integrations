@@ -25,4 +25,3 @@ self.addEventListener("message", async ({ data }: { data: FormatterPayload }) =>
       break;
   }
 });
-export {};
