@@ -1,8 +1,8 @@
 {
   "name": "@solid-integrations/qrcode-generator",
   "version": "0.0.100",
-  "description": "A template primitive example.",
-  "author": "Your Name <you@youremail.com>",
+  "description": "An integration with qrcode-generator",
+  "author": "Thomas Beer",
   "contributors": [],
   "license": "MIT",
   "homepage": "https://github.com/tommypop2/solid-integrations/tree/main/packages/qrcode-generator#readme",
