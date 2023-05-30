@@ -11,7 +11,7 @@
 
 A sample primitive that is made up for templating with the following options:
 
-`createPrimitiveTemplate` - Provides a getter and setter for the primitive.
+`createFormatted` - Provides a reactive resource - giving the prettier formatted version of the code provided.
 
 ## Installation
 
@@ -26,12 +26,11 @@ pnpm add @solid-integrations/prettier
 ## How to use it
 
 ```ts
-const [value, setValue] = createPrimitiveTemplate(false);
+const [code, setCode] = createSignal(
+  `function terriblyFormatted(     ){      console.log("This code is terribly formatted")}`,
+);
+const formattedCode = createFormatted(code);
 ```
-
-## Demo
-
-You can use this template for publishing your demo on CodeSandbox: https://codesandbox.io/s/solid-primitives-demo-template-sz95h
 
 ## Changelog
 

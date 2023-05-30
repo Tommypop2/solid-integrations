@@ -1,6 +1,6 @@
 {
   "name": "@solid-integrations/prettier",
-  "version": "0.0.100",
+  "version": "0.0.200",
   "description": "An integration with prettier to format code",
   "author": "Thomas Beer",
   "contributors": [],

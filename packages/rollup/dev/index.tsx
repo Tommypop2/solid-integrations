@@ -5,7 +5,7 @@ const App: Component = () => {
   const increment = () => setCount(count() + 1);
   const [files, setFiles] = createSignal({
     "main.js": "import {coolFun} from './coolFile.js'; coolFun()",
-    "coolFile.js": "export function coolFun(){console.log('this_is_cool')}",
+    "coolFile.js": "export function coolFun(){console.log('Hello World')}",
   });
   // const [compiled, { mutate, refetch }] = createCompiled(files);
   const compiled = createCompiledCode(files);
