@@ -22,15 +22,17 @@ export const createFormatted = (code: Accessor<string>) => {
   }
   const [client, setClient] = createSignal(false);
   onMount(() => setClient(true));
-  const shouldRun = () => {
-    const c = code();
-    const cl = client();
-    if (c && cl) return c;
-    return false;
-  };
-  const [formatted] = createResource(shouldRun, async () => {
-    if (isServer) return;
-    return await formatWithWorker(formatterWorker!, code());
-  });
+  const [formatted] = createResource(
+    () => {
+      const c = code();
+      const cl = client();
+      if (c && cl) return c;
+      return false;
+    },
+    async () => {
+      if (isServer) return;
+      return await formatWithWorker(formatterWorker!, code());
+    },
+  );
   return formatted;
 };
